@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>タワーゲーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- ヘルプ・スコア表示用オーバーレイ -->
+    <div id="ui-layer">
+      <div class="score-board">
+        <span class="label">スコア</span>
+        <span id="score">0</span>
+      </div>
+      <div class="highscore-board">
+        <span class="label">最高記録</span>
+        <span id="highscore">0</span>
+      </div>
+    </div>
+
+    <!-- メインのゲーム画面（Canvas） -->
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+    <!-- スタート / ゲームオーバー画面 -->
+    <div id="start-screen" class="screen">
+      <h1>BLOCK TOWER</h1>
+      <p>タイミングよく画面をタップして<br>高く積み上げよう！</p>
+      <button id="start-btn" type="button">ゲームスタート</button>
+    </div>
+
+    <div id="gameover-screen" class="screen hidden">
+      <h2>GAME OVER</h2>
+      <p>タワーが崩れてしまった！</p>
+      <div class="result-box">
+        <p>スコア: <span id="final-score">0</span></p>
+      </div>
+      <button id="restart-btn" type="button">もう一度遊ぶ</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
