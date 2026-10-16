@@ -266,19 +266,13 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-// イベントリスナー
-function handleAction(e) {
-  if (e.target.tagName === 'BUTTON') return;
+// イベントリスナー（pointerdownを使って即座に反応させる）
+canvas.addEventListener('pointerdown', (e) => {
+  e.preventDefault();
   if (gameState === 'PLAYING') {
     placeBlock();
   }
-}
-
-canvas.addEventListener('click', handleAction);
-canvas.addEventListener('touchstart', (e) => {
-  e.preventDefault();
-  handleAction(e);
-}, { passive: false });
+});
 
 startBtn.addEventListener('click', () => {
   startScreen.classList.add('hidden');
